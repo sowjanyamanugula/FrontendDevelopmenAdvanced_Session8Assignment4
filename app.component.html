@@ -1,0 +1,48 @@
+
+<div class="container">
+      <h2>UserData</h2>
+      <form [formGroup]="userForm" (ngSumbit)="onSubmit()">
+      <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" formControlname="name">
+             <div *ngIf="userForm.controls['name'].hasError('required')" class="alert alert-danger">
+                  Please enter a name
+            </div>
+            <div *ngIf="userForm.controls['name'].hasError('minLength')" class="alert alert-danger">
+                  Please enter atleast 4 characters
+            </div>
+      </div>
+      <div class="form-group">
+            <label>UserName</label>
+            <input type="text" class="form-control" formControlname="username">
+            
+      </div>
+      <div class="form-group">
+            <label>Email</label>
+            <input type="text" class="form-control" formControlname="email">
+           
+            
+      </div>
+      <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="text" class="form-control" formControlname="mobile">
+          
+      </div>
+      <div class="form-group">
+            <label>Password</label>
+            <input type="text" class="form-control" formControlname="password">
+           
+      </div>
+      <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="text" class="form-control" formControlname="confrmpassword">
+           
+      </div>
+      <button type="submit"  class="btn btn-primary">Submit</button>
+      </form>
+</div>
+
+<input type="text" [(ngModel)]="name1" >
+
+<div *ngIf="name1=='Sowjanya'">Hello {{name1}}</div>
+<div *ngIf="name1!='Sowjanya'">radom name</div>
